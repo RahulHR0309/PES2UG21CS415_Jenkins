@@ -14,8 +14,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Print output of .cpp file using shell script
-                    sh './output'
+                    // Intentional error: trying to execute a non-existent script
+                    sh './non_existent_script.sh'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Add deployment steps here
-                echo 'Deployment completed
+                echo 'Deployment completed'
             }
         }
     }
